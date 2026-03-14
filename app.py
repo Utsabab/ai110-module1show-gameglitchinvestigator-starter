@@ -2,12 +2,13 @@ import random
 import streamlit as st
 
 def get_range_for_difficulty(difficulty: str):
+    # FIXME: Logic breaks here
     if difficulty == "Easy":
         return 1, 20
     if difficulty == "Normal":
-        return 1, 100
-    if difficulty == "Hard":
         return 1, 50
+    if difficulty == "Hard":
+        return 1, 100
     return 1, 100
 
 
@@ -78,8 +79,8 @@ difficulty = st.sidebar.selectbox(
 )
 
 attempt_limit_map = {
-    "Easy": 6,
-    "Normal": 8,
+    "Easy": 7,
+    "Normal": 6,
     "Hard": 5,
 }
 attempt_limit = attempt_limit_map[difficulty]
@@ -154,7 +155,7 @@ if submit:
         st.error(err)
     else:
         st.session_state.history.append(guess_int)
-
+        # FIXME: Logic breaks here
         if st.session_state.attempts % 2 == 0:
             secret = str(st.session_state.secret)
         else:
