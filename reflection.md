@@ -5,8 +5,30 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 1. What was broken when you started?
 
 - What did the game look like the first time you ran it?
+The number guessing game lets user input number in order to guess a secret random number chosen by the program.
 - List at least two concrete bugs you noticed at the start  
-  (for example: "the secret number kept changing" or "the hints were backwards").
+  a)
+  What happened:
+  * The range of numbers and the attempts allowed for easy, normal and hard mode are inconsistent. 
+  What's expected:
+  * The normal mode should have lower range of numbers than easy and lower allowed attempts than easy mode.
+  b) 
+  What happened: 
+  * The hints are incorrect. Suggests to go higher on the guess while the secret number is less than the attempted guess.
+  What's expected:
+  * Should advise to go higher if the current guess is less than the secret number and to go lower if the current guess is greater than the secret number.
+  c) 
+  What happened:
+  * Attempts left metric is inconsistent. The number is 1 less than the attempts allowed when the game is initially started but is restored to the correct number when the game is renewed.
+  What's expected:
+  * The game should show correct allowed attempts at the start of the game.
+  d)
+  What happened:
+  * If you start new game before losing or winning the current game, the history isn't cleared. The history should be cleared when the new game is started.
+  What's expected:
+  * Can't play the game even after starting a new game if you lose or win the current game. The game should be playable when the new game is started.
+
+
 
 ---
 
