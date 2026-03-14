@@ -43,10 +43,6 @@ The number guessing game lets user input number in order to guess a secret rando
   h)
   What happened: The game always displays Guess a number between 1 and 100.
   What's expected: The game should display text to ask user to guess a number between the given range of the game level. 
-
-
-
-
 ---
 
 ## 2. How did you use AI as a teammate?
