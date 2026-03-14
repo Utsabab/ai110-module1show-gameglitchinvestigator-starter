@@ -53,7 +53,7 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📸 Demo
 
-- [ ] ![Final demo](/Users/utsab06/Desktop/Codepath AI110/ai110-module1show-gameglitchinvestigator-starter/imagefinaldemo.jpg?raw=true)
+- [ ] ![Final demo](ai110-module1show-gameglitchinvestigator-starter/image/finaldemo.jpg?raw=true)
 
 ## 🚀 Stretch Features
 
