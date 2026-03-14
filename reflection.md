@@ -32,6 +32,11 @@ The number guessing game lets user input number in order to guess a secret rando
   * Can't play the game even after starting a new game if you lose or win the current game. 
   What's expected:
   * The game should be playable when the new game is started.
+  f) 
+  What happened:
+  * The attempts left counter in the game is not real time and also the game history doesn't update in real-time.
+  What's expected:
+  * The game history and the attempt left counter should be real-time reflecting the most recent guess made by the user.
 
 
 
