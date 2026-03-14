@@ -27,6 +27,7 @@ The number guessing game lets user input number in order to guess a secret rando
   * If you start new game before losing or winning the current game, the history isn't cleared. 
   What's expected:
   * The history should be cleared when the new game is started.
+  e)
   What happened:
   * Can't play the game even after starting a new game if you lose or win the current game. 
   What's expected:
