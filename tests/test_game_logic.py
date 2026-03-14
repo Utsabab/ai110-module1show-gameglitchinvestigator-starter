@@ -132,6 +132,11 @@ def test_normal_range_upper_bound_is_50():
     _, high = get_range_for_difficulty("Normal")
     assert high == 50
 
+def test_hard_range_upper_bound_is_100():
+    # Bug 7 & 8: Hard mode upper bound must be exactly 100, not 50
+    _, high = get_range_for_difficulty("Hard")
+    assert high == 100
+
 
 # ──────────────────────────────────────────────────────────────────────────────
 # parse_guess — input validation (supports stable guess processing)
