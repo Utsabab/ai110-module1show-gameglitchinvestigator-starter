@@ -24,9 +24,13 @@ The number guessing game lets user input number in order to guess a secret rando
   * The game should show correct allowed attempts at the start of the game.
   d)
   What happened:
-  * If you start new game before losing or winning the current game, the history isn't cleared. The history should be cleared when the new game is started.
+  * If you start new game before losing or winning the current game, the history isn't cleared. 
   What's expected:
-  * Can't play the game even after starting a new game if you lose or win the current game. The game should be playable when the new game is started.
+  * The history should be cleared when the new game is started.
+  What happened:
+  * Can't play the game even after starting a new game if you lose or win the current game. 
+  What's expected:
+  * The game should be playable when the new game is started.
 
 
 
