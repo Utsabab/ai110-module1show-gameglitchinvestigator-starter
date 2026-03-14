@@ -1,5 +1,6 @@
 def get_range_for_difficulty(difficulty: str):
     """Return (low, high) inclusive range for a given difficulty."""
+    # FIXED BUG 1: Easy should have a smaller range than Normal, and Normal should have a smaller range than Hard using Claude
     if difficulty == "Easy":
         return 1, 20
     if difficulty == "Normal":

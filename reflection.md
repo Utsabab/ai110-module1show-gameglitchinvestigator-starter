@@ -46,29 +46,42 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 2. How did you use AI as a teammate?
 
 - Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
+  I used Claude to fix bugs within the code while used Copilot agent to refactor the code.
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
+  Among many, Claude suggested me to remove code that was converting guess instance to string and comparing it with the int of secret number which was causing the hint to be inconsistent. I verified the result by testing how hints suggest while guessing the number through different levels of the game.
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
+  I asked Claude to make the history of the game and attempts left counter to be real-time as it wasn't reflecting the most recent guess. Claude instead created a new history feature where it displayed the history of the game while the bug remained unfixed. I verified it by playing the game. I reprompted by outlining what we have and what needed to be fixed and Claude eventually fixed the issue and now the game shows attempts left and history in real-time as soon as the guess is made.
 
 ---
 
 ## 3. Debugging and testing your fixes
 
 - How did you decide whether a bug was really fixed?
+  Once the bug was fixed, I replayed the game to make sure the bug that I was dealing with was fixed through repetition. In addition, I used Claude to generate pytest testcases that tested all the bug fixes except for the one's that need UI/Integration testing.
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
+  One manual test that I conducted was for Bug 7, where when the new game was started, game disregarded the range level of numbers for the given game level and generated secret number that were out of bounds. I validated the fix by playing games multiple times and also through pytest testcases.
 - Did AI help you design or understand any tests? How?
+  Yes. Claude helped me design testcases that precisely tested the bug fixes I made on the code. For example, when testing for Bug 1 to validate updated range of numbers for each level of the game, the testcase validated the generated secret code is within the bounds after new game is started and the upper bounds are according to the game level as well.
+  In addition, Claude generated pytest testcases to test beyind our bug fixes, where it tested the function that parsed the user input with edge cases such as using float, string, and empty input and also validated the correctness of score calculation of the game.
 
 ---
 
 ## 4. What did you learn about Streamlit and state?
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
-
+  Every time a user clicks on the button or changes a dropdown, the entire page refreshes, all the variables are re-created and calculations rerun. In order to not lose the progress we have made, sessions states exist which acts as a memory between reruns for a given user. Think of it as a notepad Streamlit keeps on the side.
+  Rerun -> Erase everything that's written on the whiteboard.
+  Session state -> Sticky note on the corner of the whiteboard that survices erasing.
+  
 ---
 
 ## 5. Looking ahead: your developer habits
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
   - This could be a testing habit, a prompting strategy, or a way you used Git.
+  Get hands-on with the existing codebase to see how it functions and identify evident bugs. Use AI to validate the bugs and check for any new ones. Use AI to fix the code but manually read the changes and understand how it changes the output before approving the changes.
 - What is one thing you would do differently next time you work with AI on a coding task?
+  I won't use AI atleast before experimenting with the app and understanding what the objective of the app is, what are some major issues that are existent in the app.
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+  AI generated codes can fix bugs and design implemetations very fast and can impact the speed and impact of any product/service.

@@ -30,6 +30,7 @@ st.sidebar.caption(f"Attempts allowed: {attempt_limit}")
 if "secret" not in st.session_state:
     st.session_state.secret = random.randint(low, high)
 
+# FIXED BUG 3: Ensure that the game_id is initialized in session state to avoid key errors using Claude
 if "attempts" not in st.session_state:
     st.session_state.attempts = 0
 
@@ -51,6 +52,7 @@ if "game_id" not in st.session_state:
 st.subheader("Make a guess")
 
 info_slot = st.empty()
+# FIXED BUG 8: Ensure that the info_slot displays the correct range and attempts left based on the selected difficulty using Claude
 if st.session_state.status == "playing":
     info_slot.info(
         f"Guess a number between {low} and {high}. "
@@ -85,6 +87,7 @@ with col2:
 with col3:
     show_hint = st.checkbox("Show hint", value=True)
 
+# FIXED BUG 4,5,7: Ensure that a new game resets the secret number within the correct range, clear history and the status remains playing using Claude
 if new_game:
     st.session_state.attempts = 0
     st.session_state.secret = random.randint(low, high)
@@ -118,6 +121,7 @@ if submit:
         st.session_state.feedback = {"type": "error", "text": err}
     else:
         st.session_state.history.append(guess_int)
+        # FIXED BUG 2: The check_guess function should be called with the parsed integer guess, not the raw string input claude
         outcome, message = check_guess(guess_int, st.session_state.secret)
 
         if show_hint:
